@@ -1,0 +1,14 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if nums:
+            og = nums[0] # hold original gangster
+            dup = 0 # duplicate counter
+            for i in range(1, len(nums)): # loop from second item
+                if nums[i] == og: # if duplicate
+                    nums[i] = 101 # change value to whatever you want, 
+                    dup += 1 # increment duplicate counter
+                else: # if not duplicate
+                    og = nums[i] # we have a new O.G.
+                    nums[i], nums[i - dup] = nums[i - dup], nums[i] # move O.G. before all the dummy values (at the end of our expectedNums)
+            return len(nums) - dup # return difference of array length and duplicate counter to get length of expectedNums
+        return 0 # return 0 if nums is empty
