@@ -1,0 +1,23 @@
+a = [20, 30,10, 40, 50]
+b = [20, 10, 50, 100]
+c = []
+
+for i in a:
+  for j in b:
+    if i and j not in c:
+      c.append(i)
+  c.append(j)
+    # else:
+   # c.append(j)
+print(c)
+c.sort()
+print(c)
+
+unique = []
+
+for i in c:
+  if i not in unique:
+    unique.append(i)
+
+print(c)
+print(unique)
